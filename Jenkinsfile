@@ -6,7 +6,7 @@ pipeline {
             steps {
                 bat 'python -m venv venv'
                 bat '.\\venv\\Scripts\\python.exe -m pip install --upgrade pip'
-                bat '.\\venv\\Scripts\\python.exe -m pip install -r requirements.txt'
+                bat '.\\venv\\Scripts\\python.exe -m pip install -r requisites.txt'
             }
         }
 
