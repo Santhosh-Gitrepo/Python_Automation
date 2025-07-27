@@ -12,7 +12,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat '.\\venv\\Scripts\\python.exe -m pytest --maxfail=2 --disable-warnings'
+                bat '.\\venv\\Scripts\\python.exe -m pytest -s --maxfail=2 --disable-warnings'
             }
         }
 
