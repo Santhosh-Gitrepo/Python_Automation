@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Santhosh-Gitrepo/Python_Automation.git'
-            }
-        }
-
         stage('Setup Python Environment') {
             steps {
                 bat 'python -m venv venv'
