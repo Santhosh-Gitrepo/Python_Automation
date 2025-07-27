@@ -13,6 +13,11 @@ class WebAppDriver:
         service = Service(ChromeDriverManager().install())
         options = Options()
         options.add_experimental_option("detach", True)
+        options.add_argument("--headless")                # Headless mode
+        options.add_argument("--no-sandbox")              # Required in some CI
+        options.add_argument("--disable-dev-shm-usage")   # Avoid memory issues
+        options.add_argument("--disable-gpu")             # Safe for headless
+        options.add_argument("--window-size=1920,1080")
         self.driver = webdriver.Chrome(service=service, options=options)
         self.driver.implicitly_wait(10)
 
