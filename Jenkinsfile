@@ -5,14 +5,14 @@ pipeline {
         stage('Setup Python Environment') {
             steps {
                 bat 'python -m venv venv'
-                bat '.\\venv\\Scripts\\activate && pip install --upgrade pip'
-                bat '.\\venv\\Scripts\\activate && pip install -r requirements.txt'
+                bat '.\\venv\\Scripts\\python.exe -m pip install --upgrade pip'
+                bat '.\\venv\\Scripts\\python.exe -m pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat '.\\venv\\Scripts\\activate && pytest --maxfail=2 --disable-warnings'
+                bat '.\\venv\\Scripts\\python.exe -m pytest --maxfail=2 --disable-warnings'
             }
         }
 
