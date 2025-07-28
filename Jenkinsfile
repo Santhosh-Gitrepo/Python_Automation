@@ -18,8 +18,8 @@ pipeline {
                 bat 'python -m venv venv'
                 bat "${PYTHON} -m pip install --upgrade pip"
                 bat "${PIP} install -r requisites.txt"
-                bat 'appium'
-                sleep time: 10, unit: 'SECONDS' // Wait for Appium to start
+//                 bat 'appium'
+//                 sleep time: 10, unit: 'SECONDS' // Wait for Appium to start
             }
         }
 
@@ -78,7 +78,7 @@ pipeline {
         }
 
         cleanup {
-            bat 'taskkill /F /IM node.exe' // Stop Appium
+//             bat 'taskkill /F /IM node.exe' // Stop Appium
             bat 'rmdir /s /q venv'         // Clean venv
         }
     }
