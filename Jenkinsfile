@@ -12,7 +12,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat '.\venv\Scripts\python.exe -m pytest -s --maxfail=2 --disable-warnings --alluredir=allure-results --html=reports/report.html --self-contained-html'
+                bat '.\\venv\\Scripts\\python.exe -m pytest -s --maxfail=2 --disable-warnings --alluredir=allure-results --html=reports\\report.html --self-contained-html'
             }
         }
 
