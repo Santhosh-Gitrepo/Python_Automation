@@ -18,7 +18,7 @@ pipeline {
                 bat 'python -m venv venv'
                 bat "${PYTHON} -m pip install --upgrade pip"
                 bat "${PIP} install -r requisites.txt"
-                bat 'start /B appium'
+                bat 'appium'
                 sleep time: 10, unit: 'SECONDS' // Wait for Appium to start
             }
         }
