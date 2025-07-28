@@ -65,8 +65,7 @@ pipeline {
                     <p><b>HTML Report:</b> <a href="${BUILD_URL}HTML_Report">View HTML</a></p>
                 """,
                 mimeType: 'text/html',
-                to: 'san.sathish.com@gmail.com',
-                cc: 'your.cc.email@example.com'
+                to: 'san.sathish.com@gmail.com'
             )
         }
 
