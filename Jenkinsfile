@@ -16,14 +16,14 @@ pipeline {
         stage('Setup Python Environment') {
             steps {
                 bat 'python -m venv venv'
-                bat '${PYTHON} -m pip install --upgrade pip'
-                bat '${PIP} install -r requisites.txt'
+                bat "${PYTHON} -m pip install --upgrade pip"
+                bat "${PIP} install -r requisites.txt"
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat '${PYTHON} -m pytest -s --maxfail=2 --disable-warnings --alluredir=allure-results --html=reports/report.html --self-contained-html'
+                bat "${PYTHON} -m pytest -s --maxfail=2 --disable-warnings --alluredir=allure-results --html=reports/report.html --self-contained-html"
             }
         }
 
