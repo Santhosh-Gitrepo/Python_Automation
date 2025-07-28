@@ -67,6 +67,17 @@ pipeline {
     post {
         always {
             echo '🔁 Pipeline completed.'
+            emailext (
+                subject: "Test Report: ${currentBuild.fullDisplayName}",
+                body: """
+                    <p><b>Build Status:</b> ${currentBuild.currentResult}</p>
+                    <p><b>Project:</b> Python Automation</p>
+                    <p><b>Allure Report:</b> <a href="${BUILD_URL}allure">View Allure</a></p>
+                    <p><b>HTML Report:</b> <a href="${BUILD_URL}HTML_Report">View HTML</a></p>
+                """,
+                mimeType: 'text/html',
+                to: 'san.sathish.com@gmail.com'
+            )
         }
         success {
             echo '✅ Build succeeded!'
