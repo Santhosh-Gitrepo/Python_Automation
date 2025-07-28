@@ -9,3 +9,7 @@ def test_1():
     app.close()
     print("Done")
 
+
+def test_2():
+    raise Exception("Fail test")
+
