@@ -1,9 +1,13 @@
+import time
+
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from Utils.Logger import logger_setup
+from datetime import datetime
+import os
 
 
 class WebAppDriver:
@@ -84,3 +88,11 @@ class WebAppDriver:
     def get_elements_by_css(self, element):
         element = self.driver.find_element(By.CSS_SELECTOR, element)
         return element
+
+    def get_screenshot(self):
+        screen_dir = "screenshots"
+        if not os.path.exists(screen_dir):
+            os.makedirs(screen_dir)
+        time.sleep(1)
+        current_time = datetime.now().strftime("%H-%M-%S")
+        self.driver.save_screenshot(f"{screen_dir}/{current_time}.png")
