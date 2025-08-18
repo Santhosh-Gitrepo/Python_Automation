@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_USERNAME = "Santhosh-Gitrepo"
         GITHUB_PAT = credentials('github-pat')
         VENV_DIR = "venv"
         PYTHON = ".\\venv\\Scripts\\python.exe"
