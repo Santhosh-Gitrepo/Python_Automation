@@ -15,7 +15,7 @@ def run_pytest():
     os.makedirs(REPORT_DIR, exist_ok=True)
     print("Running pytest and generating report...")
     # subprocess.run(PYTEST_CMD)
-    subprocess.run(PYTEST_CMD, shell=True)
+    subprocess.run(PYTEST_CMD)
     print("Pytest completed.")
 
 
