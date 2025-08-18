@@ -7,6 +7,7 @@ import report_generator
 
 REPORT_DIR = "reports_temp"  # Temporary folder for pytest report in automation repo
 REPORT_FILE = "report.html"
+# ip = input("Enter the test script to run: ")
 PYTEST_CMD = ["pytest", f"--html={os.path.join(REPORT_DIR, REPORT_FILE)}", "--self-contained-html"]
 
 
