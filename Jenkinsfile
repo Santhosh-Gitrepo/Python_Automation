@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_PAT = credentials('github-pat')
         VENV_DIR = "venv"
         PYTHON = ".\\venv\\Scripts\\python.exe"
         PIP = ".\\venv\\Scripts\\pip.exe"
@@ -26,8 +25,8 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                // bat "${PYTHON} -m pytest -s --maxfail=2 --disable-warnings --alluredir=allure-results --html=reports/report.html --self-contained-html"
-                bat "${PYTHON} testrunner.py"
+                bat "${PYTHON} -m pytest -s --maxfail=2 --disable-warnings --alluredir=allure-results --html=reports/report.html --self-contained-html"
+//                 bat "${PYTHON} testrunner.py"
             }
         }
     }
